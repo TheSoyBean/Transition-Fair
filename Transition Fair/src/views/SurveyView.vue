@@ -1,5 +1,6 @@
 <template>
     <NavBar />
+    <button id="tts-button" class="tts-button"></button>
     <div id = "survey" class="survey">
         <form action="/submit_survey.php">
             <label for="likes">What was your favorite part of the fair?</label><br>
@@ -19,10 +20,45 @@
   
   <script setup>
   import NavBar from '@/components/NavBar.vue'
-  </script>
+  import { onMounted } from 'vue'
+  onMounted(() => {
+  if('speechSynthesis' in window){
+    var synthesis = window.speechSynthesis;
+    document.getElementById('tts-button').addEventListener('click', function(){
+        var textElement = document.getElementById('navBar');
+        var text = textElement.innerText;
+        var utterance = new SpeechSynthesisUtterance(text);
+        utterance.lang = 'en-US';
+        utterance.pitch = 1;
+        utterance.rate = 1;
+        utterance.volume = 1;
+        window.speechSynthesis.speak(utterance);
+        
+        textElement = document.getElementById('survey');
+        text = textElement.innerText;
+        utterance = new SpeechSynthesisUtterance(text);
+        utterance.lang = 'en-US';
+        utterance.pitch = 1;
+        utterance.rate = 1;
+        utterance.volume = 1;
+        window.speechSynthesis.speak(utterance);
+    });
+    
+    window.addEventListener('beforeunload', function(){
+    if (synthesis.speaking){
+        synthesis.cancel();
+    }
+    });
+}
+else{
+    console.error('TTS not supported');
+}
+  })
 
-    <style scoped>
-    .survey label{
+</script>
+
+<style scoped>
+.survey label{
     font-size: 20px;
     margin: 10px 0;
 
@@ -64,5 +100,4 @@
 .survey input[type="submit"]:hover {
     background-color: #05508c;
 }
-
 </style>

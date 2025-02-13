@@ -1,6 +1,7 @@
 <template>
     <div>
       <NavBar />
+      <button id="tts-button" class="tts-button"></button>
       <div class="summary">
             <h2>What is the DSD Transition to Adulthood Fair?</h2>
                 <p>Every year, Davis School District (DSD) annually sponsors a free 504 & Special Education Transition Fair to help parents, guardians, and students meet and become familiar with the help different agencies and organizations can provide. The 2025 Transition Fair will be held Thursday, March 6, 2025. (DSD Transition Fair) Further information will be distributed to teachers and parents during the coming school year. We invite everyone to attend and meet face-to-face with agencies and organizations to learn what would be helpful for them.
@@ -60,6 +61,40 @@
   
   <script setup>
   import NavBar from '@/components/NavBar.vue'
+  import { onMounted } from 'vue'
+  onMounted(() => {
+    if('speechSynthesis' in window){
+        var synthesis = window.speechSynthesis;
+        document.getElementById('tts-button').addEventListener('click', function(){
+            var textElement = document.getElementById('navBar');
+            var text = textElement.innerText;
+            var utterance = new SpeechSynthesisUtterance(text);
+            utterance.lang = 'en-US';
+            utterance.pitch = 1;
+            utterance.rate = 1;
+            utterance.volume = 1;
+            window.speechSynthesis.speak(utterance);
+            
+            textElement = document.getElementById('summary-text');
+            text = textElement.innerText;
+            utterance = new SpeechSynthesisUtterance(text);
+            utterance.lang = 'en-US';
+            utterance.pitch = 1;
+            utterance.rate = 1;
+            utterance.volume = 1;
+            window.speechSynthesis.speak(utterance);
+        });
+        
+        window.addEventListener('beforeunload', function(){
+        if (synthesis.speaking){
+            synthesis.cancel();
+        }
+        });
+    }
+    else{
+        console.error('TTS not supported');
+    }
+  })
   </script>
   
   <style scoped>
