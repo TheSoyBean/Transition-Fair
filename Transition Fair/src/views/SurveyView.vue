@@ -1,7 +1,7 @@
 <template>
     <NavBar />
     <button id="tts-button" class="tts-button"></button>
-    <div id = "survey" class="survey">
+    <div id="survey" class="survey">
         <form action="/submit_survey.php">
             <label for="likes">What was your favorite part of the fair?</label><br>
             <input type="text" id="likes" placeholder="Insert text here..."><br>
@@ -16,49 +16,51 @@
             </button>
         </form>
     </div>
-  </template>
-  
-  <script setup>
-  import NavBar from '@/components/NavBar.vue'
-  import { onMounted } from 'vue'
-  onMounted(() => {
-  if('speechSynthesis' in window){
-    var synthesis = window.speechSynthesis;
-    document.getElementById('tts-button').addEventListener('click', function(){
-        var textElement = document.getElementById('navBar');
-        var text = textElement.innerText;
-        var utterance = new SpeechSynthesisUtterance(text);
-        utterance.lang = 'en-US';
-        utterance.pitch = 1;
-        utterance.rate = 1;
-        utterance.volume = 1;
-        window.speechSynthesis.speak(utterance);
-        
-        textElement = document.getElementById('survey');
-        text = textElement.innerText;
-        utterance = new SpeechSynthesisUtterance(text);
-        utterance.lang = 'en-US';
-        utterance.pitch = 1;
-        utterance.rate = 1;
-        utterance.volume = 1;
-        window.speechSynthesis.speak(utterance);
-    });
-    
-    window.addEventListener('beforeunload', function(){
-    if (synthesis.speaking){
-        synthesis.cancel();
+    <AppFooter />
+</template>
+
+<script setup>
+import NavBar from '@/components/NavBar.vue'
+import AppFooter from '@/components/AppFooter.vue'
+import { onMounted } from 'vue'
+onMounted(() => {
+    if ('speechSynthesis' in window) {
+        var synthesis = window.speechSynthesis;
+        document.getElementById('tts-button').addEventListener('click', function () {
+            var textElement = document.getElementById('navBar');
+            var text = textElement.innerText;
+            var utterance = new SpeechSynthesisUtterance(text);
+            utterance.lang = 'en-US';
+            utterance.pitch = 1;
+            utterance.rate = 1;
+            utterance.volume = 1;
+            window.speechSynthesis.speak(utterance);
+
+            textElement = document.getElementById('survey');
+            text = textElement.innerText;
+            utterance = new SpeechSynthesisUtterance(text);
+            utterance.lang = 'en-US';
+            utterance.pitch = 1;
+            utterance.rate = 1;
+            utterance.volume = 1;
+            window.speechSynthesis.speak(utterance);
+        });
+
+        window.addEventListener('beforeunload', function () {
+            if (synthesis.speaking) {
+                synthesis.cancel();
+            }
+        });
     }
-    });
-}
-else{
-    console.error('TTS not supported');
-}
-  })
+    else {
+        console.error('TTS not supported');
+    }
+})
 
 </script>
 
 <style scoped>
-.survey label{
+.survey label {
     font-size: 20px;
     margin: 10px 0;
 

@@ -1,4 +1,3 @@
-<!-- filepath: /src/components/NavBar.vue -->
 <template>
     <div id="navBar" class="navBar">
       <img src="@/assets/logo.png" class="logo" alt="Logo">

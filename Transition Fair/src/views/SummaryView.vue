@@ -57,10 +57,12 @@
             <a href = "https://www.davis.k12.ut.us/o/dsd/page/all-agencies-organizations">Click here to see full list of partners</a>
         </div>
     </div>
+    <AppFooter />
   </template>
   
   <script setup>
   import NavBar from '@/components/NavBar.vue'
+  import AppFooter from '@/components/AppFooter.vue'
   import { onMounted } from 'vue'
   onMounted(() => {
     if('speechSynthesis' in window){

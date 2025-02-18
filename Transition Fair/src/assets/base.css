@@ -85,7 +85,13 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.tts-button{
+a {
+  color: #07396b;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.tts-button {
   position: fixed;
   bottom: 10px;
   right: 10px;
