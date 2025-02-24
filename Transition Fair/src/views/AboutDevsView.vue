@@ -2,7 +2,7 @@
     <div>
       <NavBar />
       <h2>About the App Developers</h2>
-      <p>Some information about the development team...</p>
+      <p>The DSD Transition Fair App was created by Rachell Buttefield, Weston Schwartz, and Sawyer Heaton from the DSD Catalyst Center.</p>
     </div>
   </template>
   
