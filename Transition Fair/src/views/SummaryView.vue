@@ -2,8 +2,7 @@
     <div>
       <NavBar />
       <button id="tts-button" class="tts-button"></button>
-      <div class="summary">
-            <p>If you have not already pre-registered for the event, <a href = "https://forms.office.com/r/n9eXV9EZ1S">click here</a> </p>
+      <div class="summary"id="summary-text">
             <h2>What is the DSD Transition to Adulthood Fair?</h2>
                 <p>Every year, Davis School District (DSD) annually sponsors a free 504 & Special Education Transition Fair to help parents, guardians, and students meet and become familiar with the help different agencies and organizations can provide. The 2025 Transition Fair will be held Thursday, March 6, 2025. (DSD Transition Fair) Further information will be distributed to teachers and parents during the coming school year. We invite everyone to attend and meet face-to-face with agencies and organizations to learn what would be helpful for them.
                     <br/><br />We maintain a list all-year round with those agencies and organizations that participated in the last Transition Fair. That list is found under the Help with Transition (Agencies and Organizations) link, as well as on our DSD Transition Fair page for convenience.
