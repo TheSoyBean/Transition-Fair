@@ -5,13 +5,22 @@
     <p>&nbsp;&nbsp;The DSD Transition Fair App was created by Rachel Buttefield, Weston Schwartz, and Sawyer Heaton from the DSD Catalyst Center.</p>
     <br>
     <img src="@/assets/Rachel.jpg" alt="Rachel Butterfield" id="peoplePics">
-    <p id="peopleNames">Rachel Butterfield</p>
+    <div id="peopleDetails">
+      <h3>Rachel Butterfield</h3>
+      <p>Rachel has always wanted to be a programmer since she was young. She </p>
+    </div>
     <br>
     <img src="@/assets/Weston.jpg" alt="Weston Schwartz" id="peoplePics">
-    <p id="peopleNames">Weston Schwartz</p>
+    <div id="peopleDetails">
+      <h3>Weston Schwartz</h3>
+      <p></p>
+    </div>
     <br>
     <img src="@/assets/Sawyer.jpg" alt="Sawyer Heaton" id="peoplePics">
-    <p id="peopleNames">Sawyer Heaton</p>
+    <div id="peopleDetails">
+      <h3>Sawyer Heaton</h3>
+      <p></p>
+    </div>
   </div>
 </template>
   
@@ -20,7 +29,7 @@ import NavBar from '@/components/NavBar.vue'
 </script>
 
 <style scoped>
-#peopleNames {
+#peopleDetails {
   text-align: center;
 }
 #peoplePics {
