@@ -24,7 +24,7 @@
       <img src="@/assets/Sawyer.jpg" alt="Sawyer Heaton" class="profile-pic">
       <div class="dev-info">
         <h3>Sawyer Heaton</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris. Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor. Ut in nulla enim. Phasellus molestie magna non est bibendum non venenatis nisl tempor.</p>
+        <p>Sawyer is always learning, whether it be programming, history, science or art, no knowledge is safe from his curiosity. He has skills in several programming languages and cybersecurity.</p>
       </div>
     </div>
   </div>
