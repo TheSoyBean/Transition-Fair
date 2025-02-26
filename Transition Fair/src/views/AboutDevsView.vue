@@ -1,25 +1,31 @@
 <template>
   <div>
     <NavBar />
-    <h2>&nbsp;&nbsp;About the App Developers</h2>
-    <p>&nbsp;&nbsp;The DSD Transition Fair App was created by Rachel Buttefield, Weston Schwartz, and Sawyer Heaton from the DSD Catalyst Center.</p>
-    <br>
-    <img src="@/assets/Rachel.jpg" alt="Rachel Butterfield" id="peoplePics">
-    <div id="peopleDetails">
-      <h3>Rachel Butterfield</h3>
-      <p>Rachel has always wanted to be a programmer since she was young. She </p>
+    <h2>About the App Developers</h2>
+    <p>The DSD Transition Fair App was created by Rachel Buttefield, Weston Schwartz, and Sawyer Heaton from the DSD Catalyst Center.</p>
+    
+    <div class="dev-profile">
+      <img src="@/assets/Rachel.jpg" alt="Rachel Butterfield" class="profile-pic">
+      <div class="dev-info">
+        <h3>Rachel Butterfield</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris. Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor. Ut in nulla enim. Phasellus molestie magna non est bibendum non venenatis nisl tempor.</p>
+      </div>
     </div>
-    <br>
-    <img src="@/assets/Weston.jpg" alt="Weston Schwartz" id="peoplePics">
-    <div id="peopleDetails">
-      <h3>Weston Schwartz</h3>
-      <p></p>
+    
+    <div class="dev-profile">
+      <img src="@/assets/Weston.jpg" alt="Weston Schwartz" class="profile-pic">
+      <div class="dev-info">
+        <h3>Weston Schwartz</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris. Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor. Ut in nulla enim. Phasellus molestie magna non est bibendum non venenatis nisl tempor.</p>
+      </div>
     </div>
-    <br>
-    <img src="@/assets/Sawyer.jpg" alt="Sawyer Heaton" id="peoplePics">
-    <div id="peopleDetails">
-      <h3>Sawyer Heaton</h3>
-      <p></p>
+    
+    <div class="dev-profile">
+      <img src="@/assets/Sawyer.jpg" alt="Sawyer Heaton" class="profile-pic">
+      <div class="dev-info">
+        <h3>Sawyer Heaton</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris. Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor. Ut in nulla enim. Phasellus molestie magna non est bibendum non venenatis nisl tempor.</p>
+      </div>
     </div>
   </div>
 </template>
@@ -29,13 +35,50 @@ import NavBar from '@/components/NavBar.vue'
 </script>
 
 <style scoped>
-#peopleDetails {
+#peopleNames {
   text-align: center;
+  font-size: 1.2rem;
+  margin: 1rem 0;
+  color: #666;
 }
-#peoplePics {
-  width: 20%;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
+
+
+.dev-profile {
+  display: flex;
+  align-items: center;
+  margin: 2rem 1rem;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.profile-pic {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 2rem;
+}
+
+.dev-info {
+  flex: 1;
+}
+
+.dev-info h3 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-size: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .dev-profile {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .profile-pic {
+    margin-right: 0;
+    margin-bottom: 1rem;
+  }
 }
 </style>

@@ -2,19 +2,7 @@
     <NavBar />
     <button id="tts-button" class="tts-button"></button>
     <div id="survey" class="survey">
-        <form action="/submit_survey.php">
-            <label for="likes">What was your favorite part of the fair?</label><br>
-            <input type="text" id="likes" placeholder="Insert text here..."><br>
-            <label for="dislikes">What was your least favorite part of the fair?</label><br>
-            <input type="text" id="dislikes" placeholder="Insert text here..."><br>
-            <label for="prob">Is there any problems you had with the fair?</label><br>
-            <input type="text" id="prob" placeholder="Insert text here..."><br>
-            <label for="extra">Anything else?</label><br>
-            <input type="text" id="extra" placeholder="Insert text here..."><br>
-            <button type="submit" value="submit">
-                Submit
-            </button>
-        </form>
+        <iframe width="640px" height="480px" src="https://forms.office.com/Pages/ResponsePage.aspx?id=dPKcPX5U9UqN3gGmNuC2B5J9yh_VULdNhlcvUdOGSo1UQU81SjlFTzhMSURQU1lFNVBDWFdVTjlGUi4u&embed=true" frameborder="0" marginwidth="0" marginheight="0" style="border: none; max-width:100%; max-height:100vh" allowfullscreen webkitallowfullscreen mozallowfullscreen msallowfullscreen> </iframe>
     </div>
     <AppFooter />
 </template>
