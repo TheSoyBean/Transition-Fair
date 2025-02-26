@@ -8,7 +8,7 @@
       <img src="@/assets/Rachel.jpg" alt="Rachel Butterfield" class="profile-pic">
       <div class="dev-info">
         <h3>Rachel Butterfield</h3>
-        <p>Rachel has always wanted to be a programmer since she was young. She is a high schooler who is currently trying to get programming experience for the future so she can work on bigger and better projects. The programming languages she has learned include; Python, C++, HTML, CSS, and some Vue.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris. Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor. Ut in nulla enim. Phasellus molestie magna non est bibendum non venenatis nisl tempor.</p>
       </div>
     </div>
     
@@ -35,7 +35,14 @@ import NavBar from '@/components/NavBar.vue'
 </script>
 
 <style scoped>
-#peopleNames {
+h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-top: 1rem;
+  color: #333;
+}
+
+p {
   text-align: center;
   font-size: 1.2rem;
   margin: 1rem 0;
