@@ -8,7 +8,7 @@
       <img src="@/assets/Rachel.jpg" alt="Rachel Butterfield" class="profile-pic">
       <div class="dev-info">
         <h3>Rachel Butterfield</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris. Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor. Ut in nulla enim. Phasellus molestie magna non est bibendum non venenatis nisl tempor.</p>
+        <p>Rachel has always wanted to be a programmer since she was young. She is a high schooler who is currently trying to get programming experience for the future so she can work on bigger and better projects. The programming languages she has learned include; Python, C++, HTML, CSS, and some Vue.</p>
       </div>
     </div>
     
