@@ -1,95 +1,132 @@
 <template>
   <div>
     <NavBar />
-    <table id="schedule-table">
-      <thead>
-        <tr>
-          <th scope="col">Time</th>
-          <th scope="col">Event 1</th>
-          <th scope="col">Event 2</th>
-          <th scope="col">Event 3</th>
-          <th scope="col">Event 4</th>
-          <th scope="col">Event 5</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td scope="row">5:00</td>
-          <td colspan="2"><button @click="changeButton($event, 0)">Weber State</button></td>
-          <td><button @click="changeButton($event, 0)">USU</button></td>
-          <td><button @click="changeButton($event, 0)">DSD</button></td>
-          <td><button @click="changeButton($event, 0)">Education and Employment</button></td>
-          <td><button @click="changeButton($event, 0)">Vocational Rehabilitation</button></td>
-        </tr>
-        <tr>
-          <td scope="row">5:30</td>
-          <td><button @click="changeButton($event, 1)">USU</button></td>
-          <td><button @click="changeButton($event, 1)">DSD</button></td>
-          <td><button @click="changeButton($event, 1)">Education and Employment</button></td>
-          <td><button @click="changeButton($event, 1)">Vocational Rehabilitation</button></td>
-        </tr>
-        <tr>
-          <td scope="row">6:00</td>
-          <td colspan="2"><button @click="changeButton($event, 2)">Weber State</button></td>
-          <td><button @click="changeButton($event, 2)">USU</button></td>
-          <td><button @click="changeButton($event, 2)">DSD</button></td>
-          <td><button @click="changeButton($event, 2)">Education and Employment</button></td>
-          <td><button @click="changeButton($event, 2)">Vocational Rehabilitation</button></td>
-        </tr>
-        <tr>
-          <td scope="row">6:30</td>
-          <td><button @click="changeButton($event, 3)">USU</button></td>
-          <td><button @click="changeButton($event, 3)">DSD</button></td>
-          <td><button @click="changeButton($event, 3)">Education and Employment</button></td>
-          <td><button @click="changeButton($event, 3)">Vocational Rehabilitation</button></td>
-        </tr>
-        <tr>
-          <td scope="row">7:00</td>
-          <td colspan="2"><button @click="changeButton($event, 4)">Weber State</button></td>
-          <td><button @click="changeButton($event, 4)">USU</button></td>
-          <td><button @click="changeButton($event, 4)">DSD</button></td>
-          <td><button @click="changeButton($event, 4)">Education and Employment</button></td>
-          <td><button @click="changeButton($event, 4)">Vocational Rehabilitation</button></td>
-        </tr>
-        <tr>
-          <td scope="row">7:30</td>
-          <td><button @click="changeButton($event, 5)">USU</button></td>
-          <td><button @click="changeButton($event, 5)">DSD</button></td>
-          <td><button @click="changeButton($event, 5)">Education and Employment</button></td>
-          <td><button @click="changeButton($event, 5)">Vocational Rehabilitation</button></td>
-        </tr>
-      </tbody>
-    </table>
+    <button id="tts-button" class="tts-button"></button>
+    <div class="schedule-container" id="schedule-content">
+      <h1>Transition Fair Breakout Sessions</h1>
+      
+      <div class="schedule-item">
+        <div class="time">5:00 PM</div>
+        <div class="session">Vocational Rehabilitation</div>
+      </div>
+      
+      <div class="schedule-item">
+        <div class="time">5:30 PM</div>
+        <div class="session">Utah Parent Center - Transition University</div>
+      </div>
+      
+      <div class="schedule-item">
+        <div class="time">6:00 PM</div>
+        <div class="session">Vista Education Campus</div>
+      </div>
+      
+      <div class="schedule-item">
+        <div class="time">6:30 PM</div>
+        <div class="session">Vocational Rehabilitation</div>
+      </div>
+      
+      <div class="schedule-item">
+        <div class="time">7:00 PM</div>
+        <div class="session">Division of Services for People with Disabilities (DSPD)</div>
+      </div>
+      
+      <div class="schedule-item">
+        <div class="time">7:30 PM</div>
+        <div class="session">Utah Parent Center</div>
+      </div>
+    </div>
   </div>
+  <AppFooter />
 </template>
 
 <script setup>
 import NavBar from '@/components/NavBar.vue'
-import { reactive } from 'vue';
+import AppFooter from '@/components/AppFooter.vue'
+import { onMounted } from 'vue'
 
-const selectedButtons = reactive({});
+onMounted(() => {
+  if ('speechSynthesis' in window) {
+    var synthesis = window.speechSynthesis;
+    document.getElementById('tts-button').addEventListener('click', function () {
+      var textElement = document.getElementById('navBar').innerText + ' ' + document.getElementById('schedule-content').innerText;
+      var utterance = new SpeechSynthesisUtterance(textElement);
+      utterance.lang = 'en-US';
+      utterance.pitch = 1;
+      utterance.rate = 1;
+      utterance.volume = 1;
+      window.speechSynthesis.speak(utterance);
+    });
 
-const changeButton = (event, rowIndex) => {
-  // Deselect previous button in the same row
-  if (selectedButtons[rowIndex]) {
-    selectedButtons[rowIndex].style.backgroundColor = "";
+    window.addEventListener('beforeunload', function () {
+      if (synthesis.speaking) {
+        synthesis.cancel();
+      }
+    });
   }
-
-  // Select the clicked button
-  event.target.style.backgroundColor = "#B2BEB5";
-  selectedButtons[rowIndex] = event.target;
-};
+  else {
+    console.error('TTS not supported');
+  }
+})
 </script>
 
 <style scoped>
-#schedule-table {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  height: 100vh;
-  padding-top: 20px; /* Adjust this value as needed */
+.schedule-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px 20px;
 }
-.td, .th {
-  border-spacing: 10px;
+
+h1 {
+  color: #07396b;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.schedule-item {
+  display: flex;
+  margin-bottom: 20px;
+  padding: 15px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.schedule-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.time {
+  flex: 0 0 100px;
+  font-weight: bold;
+  color: #07396b;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+}
+
+.session {
+  flex-grow: 1;
+  font-size: 1.1rem;
+  padding-left: 20px;
+  border-left: 2px solid #07396b;
+}
+
+@media (max-width: 600px) {
+  .schedule-item {
+    flex-direction: column;
+  }
+  
+  .time {
+    margin-bottom: 10px;
+  }
+  
+  .session {
+    padding-left: 0;
+    padding-top: 10px;
+    border-left: none;
+    border-top: 2px solid #07396b;
+  }
 }
 </style>
