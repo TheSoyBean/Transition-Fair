@@ -4,6 +4,7 @@ import SummaryView from '@/views/SummaryView.vue'
 import MapView from '@/views/MapView.vue'
 import SurveyView from '@/views/SurveyView.vue'
 import AboutDevView from '@/views/AboutDevsView.vue'
+import ScheduleView from '@/views/ScheduleView.vue'
 
 
 const routes = [
@@ -12,6 +13,7 @@ const routes = [
   { path: '/map', name: 'map', component: MapView },
   { path: '/survey', name: 'survey', component: SurveyView },
   { path: '/about-dev', name: 'aboutDevs', component: AboutDevView },
+  { path: '/schedule', name: 'schedule', component: ScheduleView},
 
 ]
 

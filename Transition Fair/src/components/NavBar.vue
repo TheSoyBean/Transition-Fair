@@ -3,6 +3,7 @@
       <img src="@/assets/logo.png" class="logo" alt="Logo">
       <router-link to="/">Home</router-link>
       <router-link to="/summary">Summary</router-link>
+      <router-link to="/schedule">Schedule</router-link>
       <router-link to="/map">Map</router-link>
       <router-link to="/survey">Exit Survey</router-link>
     </div>
