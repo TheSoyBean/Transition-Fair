@@ -16,7 +16,7 @@
       <img src="@/assets/Weston.jpg" alt="Weston Schwartz" class="profile-pic">
       <div class="dev-info">
         <h3>Weston Schwartz</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris. Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor. Ut in nulla enim. Phasellus molestie magna non est bibendum non venenatis nisl tempor.</p>
+        <p>Weston is an ambitious high school senior who plans on going to the University of Utah to further his studies and go into Game Development. He currently has certifications in HTML/CSS, Javascript, and Python. He also knows C++ and some C#.</p>
       </div>
     </div>
     
