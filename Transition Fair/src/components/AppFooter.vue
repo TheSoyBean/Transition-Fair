@@ -1,6 +1,7 @@
 <template>
   <footer class="footer">
-    <router-link to="/about-dev">About the App Developers</router-link>
+    <router-link id="app-developers" to="/about-dev">About the App Developers</router-link>
+    <a id = "partner-info" href = "https://www.davis.k12.ut.us/o/dsd/page/all-agencies-organizations"> Click here for Partner Information</a>
   </footer>
 </template>
 
@@ -12,7 +13,17 @@
   background-color: #07396b;
   padding: 10px;
   margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.app-developers{
   text-align: center;
+  margin-left: 0;
+}
+
+.partner-info{
+  text-align: left;
 }
 
 .footer a {
