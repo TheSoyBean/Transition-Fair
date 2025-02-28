@@ -16,7 +16,7 @@
 import { ref, onMounted } from 'vue'
 import NavBar from '@/components/NavBar.vue'
 import AppFooter from '@/components/AppFooter.vue'
-import TtsButton from '@/components/Ttsbutton.vue'
+import TtsButton from '@/components/TtsButton.vue'
 
 const showModal = ref(false)
 

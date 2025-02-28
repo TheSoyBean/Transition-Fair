@@ -92,7 +92,7 @@
 <script setup>
 import NavBar from '@/components/NavBar.vue'
 import AppFooter from '@/components/AppFooter.vue'
-import TtsButton from '@/components/Ttsbutton.vue'
+import TtsButton from '@/components/TtsButton.vue'
 </script>
 
 <style scoped>
