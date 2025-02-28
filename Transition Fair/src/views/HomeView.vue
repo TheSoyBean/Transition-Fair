@@ -1,7 +1,7 @@
 <template>
   <div>
     <NavBar />
-    <button id="tts-button" class="tts-button"></button>
+    <TtsButton id="tts-button" class="tts-button" />
     <img src="@/assets/flyer.png" class="flyer" alt="Fair Flyer" @click="showModal = true" />
     <div v-if="showModal" class="modal" @click.self="showModal = false">
       <img src="@/assets/flyer.png" class="modal-content" alt="Fair Flyer" />
@@ -48,6 +48,7 @@
 import { ref, onMounted } from 'vue'
 import NavBar from '@/components/NavBar.vue'
 import AppFooter from '@/components/AppFooter.vue'
+import TtsButton from '@/components/Ttsbutton.vue'
 
 const showModal = ref(false)
 const showConfirmation = ref(true) // Show confirmation dialog by default when app loads
@@ -63,31 +64,6 @@ const handleNo = () => {
   showConfirmation.value = false
   showForm.value = true
 }
-
-onMounted(() => {
-  if ('speechSynthesis' in window) {
-    var synthesis = window.speechSynthesis;
-    document.getElementById('tts-button').addEventListener('click', function () {
-      var textElement = document.getElementById('navBar');
-      var text = textElement.innerText;
-      var utterance = new SpeechSynthesisUtterance(text);
-      utterance.lang = 'en-US';
-      utterance.pitch = 1;
-      utterance.rate = 1;
-      utterance.volume = 1;
-      window.speechSynthesis.speak(utterance);
-    });
-
-    window.addEventListener('beforeunload', function () {
-      if (synthesis.speaking) {
-        synthesis.cancel();
-      }
-    });
-  }
-  else {
-    console.error('TTS not supported');
-  }
-})
 </script>
 
 <style scoped>

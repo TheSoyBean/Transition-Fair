@@ -1,7 +1,7 @@
 <template>
   <div>
     <NavBar />
-    <button id="tts-button" class="tts-button"></button>
+    <TtsButton id="tts-button" class="tts-button"/>
     <div class="schedule-container" id="schedule-content">
       <h1>Transition Fair Breakout Sessions</h1>
       
@@ -42,31 +42,7 @@
 <script setup>
 import NavBar from '@/components/NavBar.vue'
 import AppFooter from '@/components/AppFooter.vue'
-import { onMounted } from 'vue'
-
-onMounted(() => {
-  if ('speechSynthesis' in window) {
-    var synthesis = window.speechSynthesis;
-    document.getElementById('tts-button').addEventListener('click', function () {
-      var textElement = document.getElementById('navBar').innerText + ' ' + document.getElementById('schedule-content').innerText;
-      var utterance = new SpeechSynthesisUtterance(textElement);
-      utterance.lang = 'en-US';
-      utterance.pitch = 1;
-      utterance.rate = 1;
-      utterance.volume = 1;
-      window.speechSynthesis.speak(utterance);
-    });
-
-    window.addEventListener('beforeunload', function () {
-      if (synthesis.speaking) {
-        synthesis.cancel();
-      }
-    });
-  }
-  else {
-    console.error('TTS not supported');
-  }
-})
+import TtsButton from '@/components/Ttsbutton.vue';
 </script>
 
 <style scoped>

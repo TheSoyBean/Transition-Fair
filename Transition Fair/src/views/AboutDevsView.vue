@@ -1,37 +1,47 @@
 <template>
   <div>
     <NavBar />
+    <TtsButton id="tts-button" class="tts-button" />
     <h2>About the App Developers</h2>
-    <p>The DSD Transition Fair App was created by Rachel Buttefield, Weston Schwartz, and Sawyer Heaton from the DSD Catalyst Center.</p>
-    
+    <p>The DSD Transition Fair App was created by Rachel Buttefield, Weston Schwartz, and Sawyer Heaton from the DSD
+      Catalyst Center.</p>
+
     <div class="dev-profile">
       <img src="@/assets/Rachel.jpg" alt="Rachel Butterfield" class="profile-pic">
       <div class="dev-info">
         <h3>Rachel Butterfield</h3>
-        <p>Rachel has always wanted to be a programmer since she was young. She is a high schooler who is currently trying to get programming experience for the future so she can work on bigger and better projects. The programming languages she has learned include; Python, C++, HTML, CSS, and some Vue.</p>
+        <p>Rachel has always wanted to be a programmer since she was young. She is a high schooler who is currently
+          trying to get programming experience for the future so she can work on bigger and better projects. The
+          programming languages she has learned include; Python, C++, HTML, CSS, and some Vue.</p>
       </div>
     </div>
-    
+
     <div class="dev-profile">
       <img src="@/assets/Weston.jpg" alt="Weston Schwartz" class="profile-pic">
       <div class="dev-info">
         <h3>Weston Schwartz</h3>
-        <p>Weston is an ambitious high school senior who plans on going to the University of Utah to further his studies and go into Game Development. He currently has certifications in HTML/CSS, Javascript, and Python. He also knows C++ and some C#.</p>
+        <p>Weston is an ambitious high school senior who plans on going to the University of Utah to further his studies
+          and go into Game Development. He currently has certifications in HTML/CSS, Javascript, and Python. He also
+          knows C++ and some C#.</p>
       </div>
     </div>
-    
+
     <div class="dev-profile">
       <img src="@/assets/Sawyer.jpg" alt="Sawyer Heaton" class="profile-pic">
       <div class="dev-info">
         <h3>Sawyer Heaton</h3>
-        <p>Sawyer is always learning, whether it be programming, history, science or art, no knowledge is safe from his curiosity. He has skills in several programming languages and cybersecurity.</p>
+        <p>Sawyer is always learning, whether it be programming, history, science or art, no knowledge is safe from his
+          curiosity. He has skills in several programming languages and cybersecurity.</p>
       </div>
     </div>
   </div>
+  <AppFooter />
 </template>
-  
+
 <script setup>
 import NavBar from '@/components/NavBar.vue'
+import AppFooter from '@/components/AppFooter.vue'
+import TtsButton from '@/components/Ttsbutton.vue'
 </script>
 
 <style scoped>
@@ -82,7 +92,7 @@ p {
     flex-direction: column;
     text-align: center;
   }
-  
+
   .profile-pic {
     margin-right: 0;
     margin-bottom: 1rem;

@@ -1,7 +1,7 @@
 <template>
     <div>
         <NavBar />
-        <button id="tts-button" class="tts-button"></button>
+        <TtsButton id="tts-button" class="tts-button" />
         <div class="summary" id="summary-text">
             <h2>What is the DSD Transition to Adulthood Fair?</h2>
             <p>Every year, Davis School District (DSD) annually sponsors a free 504 & Special Education Transition Fair
@@ -92,31 +92,7 @@
 <script setup>
 import NavBar from '@/components/NavBar.vue'
 import AppFooter from '@/components/AppFooter.vue'
-import { onMounted } from 'vue'
-onMounted(() => {
-    if ('speechSynthesis' in window) {
-        var synthesis = window.speechSynthesis;
-        document.getElementById('tts-button').addEventListener('click', function () {
-            var textElement = document.getElementById('navBar').innerText + ' ' + document.getElementById('summary-text').innerText;
-            var text = textElement.innerText;
-            var utterance = new SpeechSynthesisUtterance(text);
-            utterance.lang = 'en-US';
-            utterance.pitch = 1;
-            utterance.rate = 1;
-            utterance.volume = 1;
-            window.speechSynthesis.speak(utterance);
-        });
-
-        window.addEventListener('beforeunload', function () {
-            if (synthesis.speaking) {
-                synthesis.cancel();
-            }
-        });
-    }
-    else {
-        console.error('TTS not supported');
-    }
-})
+import TtsButton from '@/components/Ttsbutton.vue'
 </script>
 
 <style scoped>
