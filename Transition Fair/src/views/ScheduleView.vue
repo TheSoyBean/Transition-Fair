@@ -17,7 +17,7 @@
       
       <div class="schedule-item">
         <div class="time">6:00 PM</div>
-        <div class="session">Vista Education Campus</div>
+        <div class="session">College Disability Services (WSU)</div>
       </div>
       
       <div class="schedule-item">
@@ -32,7 +32,7 @@
       
       <div class="schedule-item">
         <div class="time">7:30 PM</div>
-        <div class="session">Utah Parent Center</div>
+        <div class="session">Vista Education Campus Post-High Transition Programs</div>
       </div>
     </div>
   </div>
