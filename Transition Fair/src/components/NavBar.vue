@@ -41,13 +41,14 @@
   }
 
 
-  @media (max-width: 760px){
+  @media (max-width: 728px){
   .logo{
     display: none;
   }
 
   .navBar a{
-    font-size: 13px;
+    font-size: 15px;
+    flex: 1 1 auto;
   }
 }
 
