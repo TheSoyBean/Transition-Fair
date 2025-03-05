@@ -48,7 +48,7 @@ const showModal = ref(false)
   max-height: 90%;
 }
 
-@media (max-width: 600px){
+@media (max-width: 500px){
     .flyer{
         width: 250px;
         height: 400px;
