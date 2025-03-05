@@ -17,6 +17,7 @@
     top: 0;
     z-index: 1000;
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     padding: 10px 20px;
   }
@@ -38,4 +39,16 @@
     height: 40px;
     margin-right: 20px;
   }
+
+
+  @media (max-width: 760px){
+  .logo{
+    display: none;
+  }
+
+  .navBar a{
+    font-size: 13px;
+  }
+}
+
   </style>
