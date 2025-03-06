@@ -1,6 +1,7 @@
 <template>
     <div id="navBar" class="navBar">
       <img src="@/assets/logo.png" class="logo" alt="Logo">
+      <img src = "@/assets/logo-condensed.png" class = "logo-c" alt = "Logo">
       <router-link to="/">Home</router-link>
       <router-link to="/summary">Summary</router-link>
       <router-link to="/schedule">Schedule</router-link>
@@ -40,10 +41,20 @@
     margin-right: 20px;
   }
 
+  .logo-c{
+    display: none;
+  }
+
 
   @media (max-width: 728px){
   .logo{
     display: none;
+  }
+
+  .logo-c{
+    display: flex;
+    height: 70px;
+    margin-right: 10px;
   }
 
   .navBar a{
