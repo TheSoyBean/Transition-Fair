@@ -1,7 +1,7 @@
 <template>
   <footer class="footer">
     <router-link id="app-developers" to="/about-dev">About the App Developers</router-link>
-    <a id = "partner-info" href = "https://www.davis.k12.ut.us/o/dsd/page/all-agencies-organizations"> Click here for Partner Information</a>
+    <a id = "partner-info" href = "https://www.davis.k12.ut.us/o/dsd/page/all-agencies-organizations"> Click here for Provider Information</a>
   </footer>
 </template>
 
